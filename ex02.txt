@@ -1,0 +1,24 @@
+// O calloc inicializa o vetor já com 0 e isso pode ser usado na questão 2.b, onde pede para alocar memoria e inicilaizar tudo com 0
+//abaixo está o codigo que foi usado o malloc no 2.b
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int* alocaVetIntZero(int a);
+
+int main(){
+    int a = 5;
+    int *vetor = alocaVetIntZero(a);
+    for(int i = 0; i < a; i++){
+        printf("%d ", vetor[i]);
+    }
+    free(vetor);
+    return 0;
+}
+
+int* alocaVetIntZero(int a){
+    int* vetor = (int*)calloc(a,  sizeof(int));
+    return vetor;
+}
+
+//
